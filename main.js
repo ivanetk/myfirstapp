@@ -32,8 +32,11 @@ app.get('/', (req, resp) => {
     // set the status code
     resp.status(200)
     //send the response
-    resp.send(`<h1>The time is now ${new Date()}</h1> <img src=https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png>`)
+    resp.send(`<h1>The time is now ${new Date()}</h1><img src="/static/dog.jpeg">`)
 })
+
+// Serve static resource
+app.use("/static", express.static(__dirname + "/static"))
 
 // Start our web application
 app.listen(port, () => {
