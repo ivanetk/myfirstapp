@@ -32,11 +32,11 @@ app.get('/', (req, resp) => {
     // set the status code
     resp.status(200)
     //send the response
-    resp.send(`<h1>The time is now ${new Date()}</h1><img src="/static/dog.jpeg">`)
+    resp.send(`<h1>The time is now ${new Date()}</h1><img src="/assets/dog.jpeg">`)
 })
 
 // Serve static resource
-app.use("/static", express.static(__dirname + "/static"))
+app.use("/assets", express.static(__dirname + "/static"))
 
 // Start our web application
 app.listen(port, () => {
